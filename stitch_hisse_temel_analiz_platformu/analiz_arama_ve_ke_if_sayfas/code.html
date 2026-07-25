@@ -1,0 +1,232 @@
+<!DOCTYPE html><html class="light" lang="tr" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "inverse-on-surface": "#eaf1ff",
+                "background": "#f8f9ff",
+                "on-surface-variant": "#45464d",
+                "tertiary-fixed": "#ffdadb",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#131b2e",
+                "error-container": "#ffdad6",
+                "tertiary": "#000000",
+                "primary-fixed-dim": "#bec6e0",
+                "on-background": "#0b1c30",
+                "tertiary-container": "#40000d",
+                "surface-container": "#e5eeff",
+                "on-secondary-fixed-variant": "#005236",
+                "on-secondary-container": "#00714d",
+                "on-secondary": "#ffffff",
+                "primary-fixed": "#dae2fd",
+                "primary-container": "#131b2e",
+                "outline": "#76777d",
+                "surface-container-low": "#eff4ff",
+                "surface-tint": "#565e74",
+                "surface-dim": "#cbdbf5",
+                "surface-container-highest": "#d3e4fe",
+                "on-primary": "#ffffff",
+                "surface-variant": "#d3e4fe",
+                "primary": "#000000",
+                "outline-variant": "#c6c6cd",
+                "surface": "#f8f9ff",
+                "secondary-container": "#6cf8bb",
+                "on-surface": "#0b1c30",
+                "inverse-surface": "#213145",
+                "inverse-primary": "#bec6e0",
+                "surface-container-high": "#dce9ff",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#40000d",
+                "on-error-container": "#93000a",
+                "secondary-fixed-dim": "#4edea3",
+                "on-primary-container": "#7c839b",
+                "tertiary-fixed-dim": "#ffb2b7",
+                "secondary-fixed": "#6ffbbe",
+                "on-tertiary-container": "#f23d5c",
+                "surface-bright": "#f8f9ff",
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#002113",
+                "on-tertiary-fixed-variant": "#92002a",
+                "secondary": "#006c49",
+                "on-primary-fixed-variant": "#3f465c",
+                "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "section-margin": "40px",
+                "card-gap": "20px",
+                "gutter": "16px",
+                "container-padding": "24px",
+                "unit": "4px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter"],
+                "body-sm": ["Inter"],
+                "headline-md": ["Inter"],
+                "display-ticker": ["Inter"],
+                "data-tabular": ["JetBrains Mono"],
+                "body-md": ["Inter"],
+                "label-caps": ["Inter"],
+                "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "display-ticker": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "data-tabular": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script></head><body class="bg-background text-on-surface min-h-screen pb-24">
+    <!-- TopAppBar -->
+    <header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant flex items-center justify-between px-container-padding h-16">
+        <div class="flex items-center gap-3">
+            <img alt="Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuYIcvfwOdcU1TbRAjl8ZnVQV0XLbG61kYkdVDoeNcFi0WAC-AszpCSCTuTkPeLuY-nMAiRPzeSpemdZbzuwYQMWxxERiKpZFOvF20hEr_8ozyMw9jDzRc4znbgV4_rkXSEEDaeHNJUeety1jhOZ9SUr3IZP0F77zyU-BTauuWsYh4zug3Snsm7UsUcmWrHjQps-5yLDwO4QKvQ_g4g_Dx_yVQ-03hZuIjLHHFCoWtOHcoVAV2FbqQ_B3I">
+            <span class="font-headline-md text-headline-md font-bold text-on-surface">AIFinTech</span>
+        </div>
+        <div class="flex items-center gap-4"><button class="flex items-center justify-center overflow-hidden rounded-full w-8 h-8 border border-outline-variant hover:bg-surface-container transition-colors"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6eGvLw-H8gxGX2oenvWBpDJmzIwrIC9T4JwxQbihGwUjxKQfj0A4Khjnmv7MfBghhRu1mOoywoqEr5cF0bE-wr1HID0eVKYfpGSINN580F2H8PWZDN6928eLjmVc7XaCBxJXV-8zyf5LBhfKnn8O0t7TiC78u4mdimbj0fHAoSZEW2X4G1bJPhDdmFS_42Hv3DDgcm1ck-IUp5zyi0M5kJEe-ewihvTXn9lFvTmHViOmKpS2WubZK4XO3Kjr6js7o2eIbPbe7T2w" alt="Profile" class="w-full h-full object-cover"></button></div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-container-padding py-6 space-y-8">
+        
+        <!-- Search Section -->
+        <section class="relative">
+            <div class="relative group">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+                <input type="text" placeholder="Hisse veya sektör ara..." class="w-full bg-surface-container-lowest border border-outline-variant rounded-sm py-4 pl-12 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md transition-all shadow-sm">
+            </div>
+        </section>
+
+        <!-- Son Aramalar -->
+        <section>
+            <h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3">SON ARAMALAR</h3>
+            <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+                <button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-2">
+                    THYAO <span class="material-symbols-outlined text-[16px] text-outline">close</span>
+                </button>
+                <button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-2">
+                    EREGL <span class="material-symbols-outlined text-[16px] text-outline">close</span>
+                </button>
+                <button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-2">
+                    GARAN <span class="material-symbols-outlined text-[16px] text-outline">close</span>
+                </button>
+                <button class="px-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-2">
+                    KCHOL <span class="material-symbols-outlined text-[16px] text-outline">close</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sektör Performansı -->
+        <section>
+            <div class="flex items-baseline justify-between mb-4">
+                <h3 class="font-label-caps text-label-caps text-on-surface-variant">SEKTÖR PERFORMANSI</h3>
+                <div class="flex gap-4 border-b border-outline-variant">
+                    <button class="pb-2 text-label-caps font-bold text-primary border-b-2 border-primary">Yükselenler</button>
+                    <button class="pb-2 text-label-caps font-bold text-outline hover:text-on-surface transition-colors">Düşenler</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Rising Sectors List -->
+                <div class="space-y-2">
+                    <div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-sm flex items-center justify-between hover:border-secondary transition-colors cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">computer</span>
+                            <span class="font-body-md font-semibold">Teknoloji</span>
+                        </div>
+                        <span class="text-secondary font-data-tabular">+2.45%</span>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-sm flex items-center justify-between hover:border-secondary transition-colors cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">flight</span>
+                            <span class="font-body-md font-semibold">Ulaştırma</span>
+                        </div>
+                        <span class="text-secondary font-data-tabular">+1.82%</span>
+                    </div>
+                </div>
+                <!-- Lowering Sectors Preview (Hidden on mobile or shown as summary) -->
+                <div class="space-y-2">
+                    <div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-sm flex items-center justify-between hover:border-error transition-colors cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-error">bolt</span>
+                            <span class="font-body-md font-semibold">Enerji</span>
+                        </div>
+                        <span class="text-error font-data-tabular">-1.24%</span>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-sm flex items-center justify-between hover:border-error transition-colors cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-error">factory</span>
+                            <span class="font-body-md font-semibold">Sanayi</span>
+                        </div>
+                        <span class="text-error font-data-tabular">-0.76%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI News Section -->
+        <section>
+            <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">auto_awesome</span>
+                <h3 class="font-label-caps text-label-caps text-on-surface-variant">YAPAY ZEKA: GÜNÜN ÖNEMLİ HABERLERİ</h3>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- AI Summary Card 1 -->
+                <div class="bg-primary-container p-6 rounded-sm border-l-4 border-primary shadow-sm">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="text-[10px] font-label-caps bg-surface-container-lowest text-primary px-2 py-0.5 rounded-sm">MAKRO ANALİZ</span>
+                        <span class="text-outline text-body-sm">14:30</span>
+                    </div>
+                    <h4 class="font-headline-md text-on-primary-container mb-2 leading-tight">Enflasyon Verisi Sonrası Bankacılık Sektörü Hareketli</h4>
+                    <p class="text-body-sm text-on-primary-container opacity-85 line-clamp-3">
+                        Yapay zekamızın analizine göre, açıklanan son veriler bankacılık endeksinde (XBANK) yukarı yönlü bir ivme başlattı. GARAN ve AKBNK hisselerinde yabancı girişi sinyalleri güçleniyor.
+                    </p>
+                    <button class="mt-4 text-primary font-label-caps text-[12px] flex items-center gap-1 hover:underline">
+                        ANALİZİ GENİŞLET <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                    </button>
+                </div>
+
+                <!-- AI Summary Card 2 -->
+                
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BottomNavBar -->
+    <nav class="fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant flex justify-around items-center h-16 px-2 pb-safe"><!-- Ana Sayfa -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-[10px]">Ana Sayfa</span>
+</a>
+<!-- Analiz (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span>
+<span class="font-label-caps text-[10px]">Analiz</span>
+</a>
+<!-- Karşılaştırma -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="compare">balance</span>
+<span class="font-label-caps text-[10px]">Karşılaştırma</span>
+</a>
+<!-- Profil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-[10px]">Profil</span>
+</a></nav>
+
+    <script class="">
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(btn</script></body></html>

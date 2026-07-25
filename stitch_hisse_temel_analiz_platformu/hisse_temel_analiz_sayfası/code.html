@@ -1,0 +1,286 @@
+<!DOCTYPE html><html class="light" lang="tr" style=""><svg class="inline-defs-container" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden"></svg><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AIFinTech - Hisse Temel Analiz</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#76777d",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#00714d",
+                        "error": "#ba1a1a",
+                        "primary-container": "#131b2e",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#213145",
+                        "outline-variant": "#c6c6cd",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#dae2fd",
+                        "background": "#f8f9ff",
+                        "on-tertiary-container": "#f23d5c",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb2b7",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-container": "#7c839b",
+                        "surface-tint": "#565e74",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-primary": "#bec6e0",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#40000d",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary-fixed": "#ffdadb",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-surface": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#92002a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-error": "#ffffff",
+                        "secondary": "#006c49",
+                        "on-tertiary-fixed": "#40000d",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#6cf8bb",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-margin": "40px",
+                        "card-gap": "20px",
+                        "container-padding": "24px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "display-ticker": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "data-tabular": ["JetBrains Mono"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-ticker": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "data-tabular": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+        .data-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s ease;
+        }
+        .data-card:hover {
+            box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.05);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="text-on-surface pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant w-full top-0 sticky z-50 flex justify-between items-center px-container-padding h-16 w-full">
+<div class="flex items-center gap-2 cursor-pointer active:opacity-80">
+<img alt="AIFinTech Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida/AP1WRLuv4L-ZvXQNxMi93x8UB1FxrvdQVRFUkwopqWCHLesnSD-x6UTM55C25nAA-H-rHhLmMtTlCmmfuiPkXEl4wGH2NDL4ob42ZeT144jzyvMM8jGGORlNNzlUcwCqtlijDez2KBn5ThvubLL0Smfuc4urfp_Z_cbs-HXugKt2CKmqFU7jifj-ZTiXjEg1JO8RpoFuC0UHrlYI4W5SEziW4hfK3s88NutYp7KP6MNNmEfm91xByFfY2tiKQOs">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">AIFinTech</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-surface-container-low transition-colors p-2 rounded-full">search</span>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant cursor-pointer active:opacity-80">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuxOps4vfWqz11mDeGm0L6Ip6RYcns3hwpBkCzdUGrwwUZf9HScRGtIZ7seORKoOq-YI-7s-Y0WHkswqN_45cv-oY_kmgCg-F9srnH0P564njzj1snd-6mSUum2Yj51sO8st5b6cRUg0E2ctNYA2c1yItW-Gay2_2SoaJhLz8qGIEPVZsacr_8cugxtUPFRmEN5p4LzCRkaOLG7NdoJ8EdxE8OORNBPDYRxS6jKV4Dm97sBjto_0baN8T8">
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-padding py-6 lg:py-10">
+<!-- Stock Info Hero -->
+<section class="mb-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<span class="bg-primary text-on-primary px-2 py-0.5 rounded-sm font-label-caps text-label-caps tracking-wider">BIST 100</span>
+<h2 class="font-headline-md text-on-surface-variant opacity-70">Türk Hava Yolları</h2>
+</div>
+<h3 class="font-display-ticker text-display-ticker text-primary mt-1">THYAO</h3>
+</div>
+<div class="flex flex-col md:items-end">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary">₺284,50</span>
+<span class="font-headline-md text-headline-md text-secondary flex items-center">
+<span class="material-symbols-outlined text-[20px]">arrow_drop_up</span>
+                            2.45%
+                        </span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Son güncelleme: 18:10:24</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-card-gap">
+<!-- Analysis Summary Card -->
+<div class="lg:col-span-2 flex flex-col gap-card-gap">
+
+<!-- Metric Tabs -->
+<nav class="flex border-b border-outline-variant gap-8 overflow-x-auto hide-scrollbar">
+<button class="pb-3 border-b-2 border-primary font-label-caps text-label-caps text-primary whitespace-nowrap">ÖZET</button>
+<button class="pb-3 border-b-2 border-transparent font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">ÇARPANLAR</button>
+<button class="pb-3 border-b-2 border-transparent font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">BİLANÇO</button>
+<button class="pb-3 border-b-2 border-transparent font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">GELİR TABLOSU</button>
+</nav>
+<!-- Fundamental Metrics Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="data-card p-4 rounded-sm">
+<span class="font-label-caps text-label-caps text-outline block mb-2">F/K ORANI</span>
+<div class="font-data-tabular text-data-tabular text-on-surface">3.42</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 35%;"></div>
+</div>
+<span class="font-body-sm text-[10px] text-outline mt-1 block">Sektör Ort: 8.5</span>
+</div>
+<div class="data-card p-4 rounded-sm" style="transform: translateY(0px);">
+<span class="font-label-caps text-label-caps text-outline block mb-2">PD/DD</span>
+<div class="font-data-tabular text-data-tabular text-on-surface">0.88</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 20%;"></div>
+</div>
+<span class="font-body-sm text-[10px] text-outline mt-1 block">İskontolu Alan</span>
+</div>
+<div class="data-card p-4 rounded-sm">
+<span class="font-label-caps text-label-caps text-outline block mb-2">FD/FAVÖK</span>
+<div class="font-data-tabular text-data-tabular text-on-surface">4.15</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%;"></div>
+</div>
+</div>
+<div class="data-card p-4 rounded-sm" style="transform: translateY(0px);">
+<span class="font-label-caps text-label-caps text-outline block mb-2">ÖZSERMAYE KARLILIĞI</span>
+<div class="font-data-tabular text-data-tabular text-secondary font-bold">%38.4</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 78%;"></div>
+</div>
+</div>
+<div class="data-card p-4 rounded-sm">
+<span class="font-label-caps text-label-caps text-outline block mb-2">BRÜT KAR MARJI</span>
+<div class="font-data-tabular text-data-tabular text-on-surface">%22.1</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 55%;"></div>
+</div>
+</div>
+<div class="data-card p-4 rounded-sm" style="transform: translateY(0px);">
+<span class="font-label-caps text-label-caps text-outline block mb-2">NET BORÇ / FAVÖK</span>
+<div class="font-data-tabular text-data-tabular text-on-surface">1.2x</div>
+<div class="mt-4 h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+<!-- Financial Performance Chart Placeholder -->
+<div class="data-card p-6 rounded-lg">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-label-caps text-label-caps text-primary">FİYAT GRAFİĞİ</h4>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold text-primary border-b border-primary">1G</span>
+<span class="text-[10px] font-medium text-outline">1H</span>
+<span class="text-[10px] font-medium text-outline">1A</span>
+<span class="text-[10px] font-medium text-outline">1Y</span>
+</div>
+</div>
+<div class="relative h-48 w-full flex items-end">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+<path d="M0 80 L10 75 L20 78 L30 65 L40 68 L50 55 L60 58 L70 40 L80 45 L90 30 L100 35" fill="none" stroke="#006c49" stroke-width="2"></path>
+<path d="M0 80 L10 75 L20 78 L30 65 L40 68 L50 55 L60 58 L70 40 L80 45 L90 30 L100 35 L100 100 L0 100 Z" fill="url(#gradient)" opacity="0.1"></path>
+<defs>
+<linearGradient id="gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#006c49"></stop>
+<stop offset="100%" stop-color="#006c49" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="absolute bottom-0 left-0 w-full flex justify-between pt-2 border-t border-outline-variant">
+<span class="text-[10px] text-outline font-label-caps">09:00</span>
+<span class="text-[10px] text-outline font-label-caps">12:00</span>
+<span class="text-[10px] text-outline font-label-caps">15:00</span>
+<span class="text-[10px] text-outline font-label-caps">18:00</span>
+</div>
+</div>
+</div><div class="data-card p-6 rounded-lg bg-surface-container-low border border-outline-variant"><div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span><span class="font-label-caps text-label-caps text-secondary uppercase">YAPAY ZEKA ANALİZ MERKEZİ</span></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><h6 class="font-label-caps text-[10px] text-outline mb-2 uppercase">TEMEL VERİ ANALİZİ</h6><p class="font-body-sm text-body-sm text-on-surface leading-relaxed">THYAO'nun düşük F/K ve PD/DD oranları, sektör ortalamasına göre iskontolu bir işlem gördüğüne işaret ediyor. Operasyonel karlılıktaki artış trendi hisse performansını destekleyici nitelikte.</p></div><div><h6 class="font-label-caps text-[10px] text-outline mb-2 uppercase">HABER DUYARLILIĞI</h6><p class="font-body-sm text-body-sm text-on-surface leading-relaxed">Haber akışı ve piyasa duyarlılığı pozitif yönde seyrediyor. Son 24 saatteki gelişmeler hisse üzerindeki alım baskısını destekliyor.</p></div></div></div>
+</div>
+<!-- Scoring Section -->
+<div class="flex flex-col gap-card-gap">
+
+<div class="data-card p-6 rounded-lg bg-primary-container text-on-primary-fixed" style="transform: translateY(0px);">
+<h4 class="font-label-caps text-label-caps text-surface-variant mb-4">PİYASA HABERLERİ</h4>
+<div class="flex flex-col gap-4"><div class="mb-2"><span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">Bugün</span></div><div class="border-b border-on-primary-fixed-variant pb-3 group cursor-pointer"><h5 class="font-body-md font-bold group-hover:text-secondary transition-colors text-on-primary">THY, 10 yıllık stratejik büyüme planını açıkladı.</h5></div><div class="border-b border-on-primary-fixed-variant pb-3 group cursor-pointer"><h5 class="font-body-md font-bold group-hover:text-secondary transition-colors text-on-primary">Havacılık sektöründe yakıt maliyetleri baskısı sürüyor.</h5></div><div class="mt-4 mb-2"><span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">Dün</span></div><div class="group cursor-pointer"><h5 class="font-body-md font-bold group-hover:text-secondary transition-colors text-on-primary">Yabancı aracı kurumlardan THYAO için hedef fiyat güncellemesi.</h5></div></div>
+<button class="w-full mt-6 py-3 border border-on-primary-fixed-variant text-surface-variant font-label-caps text-label-caps hover:bg-on-primary-fixed transition-colors rounded-sm uppercase tracking-widest">Tüm Haberler</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 bg-surface-container-lowest border-t border-outline-variant z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-[10px] mt-1">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">analytics</span>
+<span class="font-label-caps text-[10px] mt-1">Analiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="font-label-caps text-[10px] mt-1">Karşılaştırma</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-[10px] mt-1">Profil</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interactions for the cards
+        document.querySelectorAll('.data-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+
+</body></html>
