@@ -28,7 +28,7 @@ Projeyi yerel ortamında çalıştırmak için aşağıdaki adımları izleyebil
 
 1.  **Projeyi Klonlayın:**
     ```bash
-    git clone [https://github.com/samedbucakli/ai-fintech-app.git](https://github.com/samedbucakli/ai-fintech-app.git)
+    git clone [https://github.com/samedbucakli/ai-fintech-app.git]
     ```
 2.  **Bağımlılıkları Yükleyin:**
     ```bash
