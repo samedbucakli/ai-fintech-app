@@ -1,16 +1,46 @@
-# yenilenmis_hisse_temel_analiz_uygulamasi
+# 📈 AI Fintech App
 
-A new Flutter project.
+Kapsamlı bir finansal analiz ve portföy takip mobil uygulaması. Kullanıcılara anlık piyasa verilerini sunarken, detaylı şirket analizleri ve interaktif grafikler ile yatırımlarını takip etme imkanı sağlar. 
 
-## Getting Started
+**Not:** Bu uygulama bir bilgi teknolojileri öğrencisi projesi olarak geliştirilmektedir ve ağırlıklı olarak Borsa İstanbul (BİST) hisselerine yönelik temel analiz ve rasyo takibi yapmayı hedeflemektedir.
 
-This project is a starting point for a Flutter application.
+## ⚠️ API ve Canlı Veri Durumu
 
-A few resources to get you started if this is your first Flutter project:
+Uygulama şu an test ve geliştirme aşamasındadır. Kullanılan mevcut API sağlayıcısının ücretsiz istek kotası (limit) dolduğu için, uygulamadaki **canlı veri çekim işlemi geçici olarak duraklatılmıştır.** 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Finansal verilerin (özellikle BİST verilerinin) daha güvenilir, stabil ve kesintisiz bir şekilde uygulamaya entegre edilebilmesi için sistemin **Fintables** gibi profesyonel ve sağlam bir API servis sağlayıcısına taşınması planlanmaktadır. Daha güçlü bir altyapıdan sağlanacak yeni bir API anahtarı (API key) ile birlikte, uygulamanın veri çekim mimarisi çok daha güvenli hale getirilecek ve canlı veri akışı yeniden aktif edilecektir.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ✨ Özellikler
+
+*   **Detaylı Hisse Analizi:** Hisse senedi detay ekranında Özet, Çarpanlar, Bilanço ve Gelir Tablosu olmak üzere 4 sekmeli yapı.
+*   **İnteraktif Fiyat Grafikleri:** 1G, 1H, 1A ve 1Y gibi dinamik zaman filtreleri ile geçmiş veri analizi.
+*   **Modern Arayüz (UI):** Odaklanmayı kolaylaştıran, "Koyu Gri/Siyah" temalı standartlaştırılmış finansal metrik kartları.
+*   **Güvenli Altyapı:** Çevre değişkenleri (`.env`) kullanılarak API anahtarlarının güvenli ve gizli yönetimi.
+
+## 🛠️ Kullanılan Teknolojiler
+
+*   **Mobil Geliştirme:** Flutter & Dart
+*   **Güvenlik:** `flutter_dotenv` 
+
+## 🚀 Kurulum ve Çalıştırma
+
+Projeyi yerel ortamında çalıştırmak için aşağıdaki adımları izleyebilirsin.
+
+1.  **Projeyi Klonlayın:**
+    ```bash
+    git clone [https://github.com/samedbucakli/ai-fintech-app.git](https://github.com/samedbucakli/ai-fintech-app.git)
+    ```
+2.  **Bağımlılıkları Yükleyin:**
+    ```bash
+    cd ai-fintech-app
+    flutter pub get
+    ```
+3.  **Çevre Değişkenlerini (Environment Variables) Ayarlayın:**
+    Ana dizinde (root) `.env` adında bir dosya oluşturun ve API anahtarınızı ekleyin. *(Mevcut durumda kota dolu olduğu için kendi test anahtarınızı kullanmanız gerekebilir).*
+    ```env
+    API_KEY=senin_api_anahtarin_buraya_gelecek
+    ```
+4.  **Uygulamayı Çalıştırın:**
+    ```bash
+    flutter run
+    ```
