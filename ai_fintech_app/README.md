@@ -1,46 +1,56 @@
-# 📈 AI Fintech App
+# 📈 AI Fintech & Piyasa Analiz Uygulaması
 
-Kapsamlı bir finansal analiz ve portföy takip mobil uygulaması. Kullanıcılara anlık piyasa verilerini sunarken, detaylı şirket analizleri ve interaktif grafikler ile yatırımlarını takip etme imkanı sağlar. 
+Borsa İstanbul (BİST) yatırımcıları için tasarlanmış, yapay zeka destekli kapsamlı bir piyasa takibi ve hisse analizi aracı.
 
-**Not:** Bu uygulama bir bilgi teknolojileri öğrencisi projesi olarak geliştirilmektedir ve ağırlıklı olarak Borsa İstanbul (BİST) hisselerine yönelik temel analiz ve rasyo takibi yapmayı hedeflemektedir.
+> **📌 Geliştirici Notu:** Bu proje, bir Bilişim Sistemleri ve Teknolojileri bölümü öğrencisi tarafından uçtan uca yazılım mimarisi ve finansal teknoloji pratikleri kapsamında geliştirilmektedir.
 
-## ⚠️ API ve Canlı Veri Durumu
+---
 
-Uygulama şu an test ve geliştirme aşamasındadır. Kullanılan mevcut API sağlayıcısının ücretsiz istek kotası (limit) dolduğu için, uygulamadaki **canlı veri çekim işlemi geçici olarak duraklatılmıştır.** 
+## 🚀 Öne Çıkan Özellikler
 
-Finansal verilerin (özellikle BİST verilerinin) daha güvenilir, stabil ve kesintisiz bir şekilde uygulamaya entegre edilebilmesi için sistemin **Fintables** gibi profesyonel ve sağlam bir API servis sağlayıcısına taşınması planlanmaktadır. Daha güçlü bir altyapıdan sağlanacak yeni bir API anahtarı (API key) ile birlikte, uygulamanın veri çekim mimarisi çok daha güvenli hale getirilecek ve canlı veri akışı yeniden aktif edilecektir.
+* 🤖 **Yapay Zeka Destekli Analizler:** Hisselerin genel piyasa durumunun ve hisseye özel son dakika haberlerinin yapay zeka tarafından okunabilir, net metinler halinde özetlenmesi.
+* ⚖️ **Hisse Karşılaştırma Modülü:** Yatırım kararlarını veriye dayandırmak için seçilen 2 farklı hissenin performans ve rasyolarının yan yana detaylı kıyaslaması.
+* 📰 **Sektörel Takip ve Gelişmiş Haber Akışı:** Piyasada yükselen ve düşen sektörlerin anlık listelenmesi; şirket bazlı güncel haber akışlarının filtrelenerek sunulması.
+* 📊 **Kapsamlı Temel Analiz Arayüzü:** Her hisse senedi için; Özet, Çarpanlar, Bilanço ve Gelir Tablosu olmak üzere 4 sekmeli derinlemesine veri görünümü.
+* 📈 **İnteraktif Zaman Çizelgeleri:** 1G, 1H, 1A, 1Y periyotlarında dinamik olarak güncellenen ve kullanıcı etkileşimine duyarlı fiyat grafikleri.
 
-## ✨ Özellikler
+---
 
-*   **Detaylı Hisse Analizi:** Hisse senedi detay ekranında Özet, Çarpanlar, Bilanço ve Gelir Tablosu olmak üzere 4 sekmeli yapı.
-*   **İnteraktif Fiyat Grafikleri:** 1G, 1H, 1A ve 1Y gibi dinamik zaman filtreleri ile geçmiş veri analizi.
-*   **Modern Arayüz (UI):** Odaklanmayı kolaylaştıran, "Koyu Gri/Siyah" temalı standartlaştırılmış finansal metrik kartları.
-*   **Güvenli Altyapı:** Çevre değişkenleri (`.env`) kullanılarak API anahtarlarının güvenli ve gizli yönetimi.
+## ⚠️ Canlı Veri ve API Durumu (Önemli)
 
-## 🛠️ Kullanılan Teknolojiler
+Uygulamanın mimarisi anlık veri işleyecek şekilde tasarlanmış olup şu an aktif geliştirme/test aşamasındadır. Kullanılan mevcut API sağlayıcısının ücretsiz istek kotalarının yetersiz kalması sebebiyle **canlı veri akışı geçici olarak duraklatılmıştır.**
 
-*   **Mobil Geliştirme:** Flutter & Dart
-*   **Güvenlik:** `flutter_dotenv` 
+Sistemin veri güvenliğini artırmak ve kullanıcılara kesintisiz, stabil bir deneyim sunmak amacıyla, altyapının **Fintables** gibi profesyonel ve BİST verilerinde uzmanlaşmış bir API servis sağlayıcısına entegre edilmesi hedeflenmektedir. Bu geçiş sağlandığında uygulamanın tüm canlı veri modülleri tam kapasiteyle çalışacaktır.
 
-## 🚀 Kurulum ve Çalıştırma
+---
 
-Projeyi yerel ortamında çalıştırmak için aşağıdaki adımları izleyebilirsin.
+## 🛠 Teknolojik Altyapı
 
-1.  **Projeyi Klonlayın:**
-    ```bash
-    git clone [https://github.com/samedbucakli/ai-fintech-app.git]
-    ```
-2.  **Bağımlılıkları Yükleyin:**
-    ```bash
-    cd ai-fintech-app
-    flutter pub get
-    ```
-3.  **Çevre Değişkenlerini (Environment Variables) Ayarlayın:**
-    Ana dizinde (root) `.env` adında bir dosya oluşturun ve API anahtarınızı ekleyin. *(Mevcut durumda kota dolu olduğu için kendi test anahtarınızı kullanmanız gerekebilir).*
-    ```env
-    API_KEY=senin_api_anahtarin_buraya_gelecek
-    ```
-4.  **Uygulamayı Çalıştırın:**
-    ```bash
-    flutter run
-    ```
+* **Çerçeve (Framework):** Flutter
+* **Dil:** Dart
+* **Veri Kaynağı:** Yahoo Finance / RapidAPI (Mevcut Test Altyapısı)
+* **Güvenlik:** flutter_dotenv entegrasyonu ile API anahtarlarının ve hassas verilerin yerel ortamda gizlenmesi.
+* **Arayüz (UI):** Finansal odaklanmayı artıran koyu gri/siyah tema ve standartlaştırılmış metrik kartları.
+
+---
+
+## 💻 Kurulum Adımları
+
+Projeyi kendi yerel ortamınızda çalıştırmak ve kodları incelemek için aşağıdaki adımları takip edebilirsiniz:
+
+**1. Depoyu Klonlayın:**
+git clone [https://github.com/](https://github.com/)/ai-fintech-app.git
+(Not: Kodu kopyalarken  kısmını kendi güncel GitHub kullanıcı adınız ile değiştirmeyi unutmayın.)
+
+**2. Proje Dizinine Girin ve Bağımlılıkları Yükleyin:**
+cd ai-fintech-app
+flutter pub get
+
+**3. Çevre Değişkenlerini (.env) Yapılandırın:**
+Projenin ana dizininde (root) bir .env dosyası oluşturun ve RapidAPI test ortamı için gerekli olan anahtarlarınızı aşağıdaki formata uygun şekilde ekleyin:
+
+RAPIDAPI_KEY=kendi_api_anahtariniz_buraya_gelecek
+RAPIDAPI_HOST=apidojo-yahoo-finance-v1.p.rapidapi.com
+
+**4. Uygulamayı Başlatın:**
+flutter run
