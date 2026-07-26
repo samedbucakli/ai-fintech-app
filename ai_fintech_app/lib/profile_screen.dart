@@ -18,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
-                'assets/images/user_logo.png',
+                'assets/images/logo.png',
                 height: 36,
                 width: 36,
                 fit: BoxFit.contain,
